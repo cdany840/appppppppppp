@@ -199,7 +199,7 @@ class _BusinessFormState extends State<BusinessForm> {
                   const SizedBox( height: 16 ),
                   StyleElevatedButton(
                     onPressed: () async {
-                      if (widget.businessModel != null) selectImage.imageUrl = widget.businessModel!.image;
+                      if (widget.businessModel != null && selectImage.imageFile == null) selectImage.imageUrl = widget.businessModel!.image;
                       BusinessModel business = BusinessModel(
                         uidUser: ServicesFirebase.uid,
                         businessName: contName.text,

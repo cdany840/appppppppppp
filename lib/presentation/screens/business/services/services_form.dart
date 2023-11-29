@@ -119,7 +119,7 @@ class _ServiceFormState extends State<ServiceForm> {
                   const SizedBox( height: 16 ),                
                   StyleElevatedButton(
                     onPressed: () async {
-                      if (widget.serviceModel != null) selectImage.imageUrl = widget.serviceModel!.image;
+                      if (widget.serviceModel != null && selectImage.imageFile == null) selectImage.imageUrl = widget.serviceModel!.image;
                       ServiceModel service = ServiceModel(
                         uidBusiness: ServicesFirebase.uid,
                         serviceName: contName.text,

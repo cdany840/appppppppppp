@@ -1,5 +1,4 @@
 import 'package:appointment_app/presentation/providers/provider_theme.dart';
-import 'package:appointment_app/presentation/widgets/custom/style_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

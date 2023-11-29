@@ -42,7 +42,7 @@ class _ProfileFormState extends State<ProfileForm> {
       dropdownValue = widget.profileModel!.gender!;
       contName.text = widget.profileModel!.name!;
       contSurnames.text = widget.profileModel!.surnames!;
-      contBirthday.text = widget.profileModel!.birthdayDate.toString();
+      contBirthday.text = DateFormat("yyyy-MM-dd").format(widget.profileModel!.birthdayDate!);
       contPhone.text = widget.profileModel!.phoneNumber.toString();
     }
     super.initState();
@@ -153,7 +153,7 @@ class _ProfileFormState extends State<ProfileForm> {
                   const SizedBox( height: 16 ),
                   StyleElevatedButton(
                     onPressed: () async {
-                      if (widget.profileModel != null) selectImage.imageUrl = widget.profileModel!.image;
+                      if (widget.profileModel != null && selectImage.imageFile == null) selectImage.imageUrl = widget.profileModel!.image;
                       ProfileModel profile = ProfileModel(
                         uidUser: ServicesFirebase.uid,
                         name: contName.text,
